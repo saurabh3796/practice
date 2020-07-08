@@ -56,6 +56,17 @@ def inOrder(root):
     if root.right:
         inOrder(root.right)
 
+def height(root):
+    htleft = 0
+    htright = 0
+    if root.left:
+        htleft = 1 + height(root.left)
+    if root.right:
+        htright = 1 + height(root.right)
+    if htleft >= htright:
+        return htleft
+    return htright        
+        
 tree = BinarySearchTree()
 t = int(input())
 
